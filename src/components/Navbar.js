@@ -23,7 +23,7 @@ export default function Navbar() {
               <li key={item.id}  onClick={()=>setValue(item.value)} >
                 <Link to={item.url} className={item.id === value ? "active" : null} >
                 {item.id === value ? item.icon2:item.icon}
-                   <span>{item.text}</span>
+                 <span>{item.text}</span>
                 </Link>
               </li>
             );
@@ -42,7 +42,7 @@ export default function Navbar() {
 const Wrapper = styled.section`
   border: 1px solid;
   border-color: var(--clr-primary-10);
-  padding: 1rem 3rem;
+  padding: 0.5rem 3rem;
   .logo {
     margin-bottom: 1rem;
     /* padding: 0 0.5rem; */
@@ -89,7 +89,7 @@ const Wrapper = styled.section`
     }
   }
   button {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
   .active {
     font-weight: bold;
