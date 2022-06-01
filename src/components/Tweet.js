@@ -1,30 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import img from "../assets/img.jpg";
 import { icons } from "../utils/data";
 
+
 export default function Tweet() {
+  const [tweet, setTweet] = useState("");
+  const [post, setPost] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newPost = [...post, { id: new Date().getTime().toString(), tweet }];
+    setPost(newPost);
+    setTweet("");
+  };
+
+  const handleTweet = (e) => {
+    setTweet(e.target.value);
+  };
+
+
+
   return (
     <Wrapper>
       <div>
         <img src={img} alt="user" />
       </div>
       <div className="input-box">
-        <input
-          type="text"
-          placeholder={`What's happening ?`}
-          className="input"
-        />
-        <div className="footer">
-          <div className="icons">
-            {icons.map((icon, index) => {
-              return <div key={index}>{icon}</div>;
-            })}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder={`What's happening ?`}
+            className="input"
+            value={tweet}
+            onChange={handleTweet}
+          />
+          <div className="footer">
+            <div className="icons">
+              {icons.map((icon, index) => {
+                return <div key={index}>{icon}</div>;
+              })}
+            </div>
+            <button type="submit" className="btn">
+              Tweet
+            </button>
           </div>
-          <button type="button" className="btn">
-            Tweet
-          </button>
-        </div>
+        </form>
       </div>
     </Wrapper>
   );
@@ -40,8 +60,8 @@ const Wrapper = styled.section`
     width: 3rem;
     border-radius: 50%;
     cursor: pointer;
-
-  }
+}
+   
   .input-box {
     padding: 0 1rem;
 
@@ -56,22 +76,22 @@ const Wrapper = styled.section`
       padding: 1rem 0.5rem;
       .icons {
         display: flex;
-       svg{
-           font-size: 2.5rem;
-           border-radius: 25%;
-           padding: 0.5rem;
-        cursor: pointer;
+        svg {
+          font-size: 2.5rem;
+          border-radius: 25%;
+          padding: 0.5rem;
+          cursor: pointer;
           color: var(--clr-primary-5);
-           &:hover{
-               background-color: var(--clr-primary-10);
-           }
-       }
+          &:hover {
+            background-color: var(--clr-primary-10);
+          }
+        }
       }
       .btn {
         text-transform: capitalize;
         background: var(--clr-primary-8);
         color: var(--clr-primary-10);
-        padding: 0 1.2rem;
+        padding: 0 1.5rem;
         letter-spacing: var(--spacing);
         display: inline-block;
         font-weight: 400;
