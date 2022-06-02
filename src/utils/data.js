@@ -1,9 +1,9 @@
 import React from "react";
-import { AiOutlineHome, AiOutlineBell, AiOutlineMessage,AiTwotoneHome,AiFillMessage,AiOutlineFileGif,AiOutlineSchedule } from "react-icons/ai";
-import { FaHashtag } from "react-icons/fa";
+import { AiOutlineHome, AiOutlineBell, AiOutlineMessage,AiTwotoneHome,AiFillMessage,AiOutlineFileGif,AiOutlineSchedule ,AiOutlineHeart} from "react-icons/ai";
+import { FaHashtag ,FaRegCommentAlt,FaRetweet} from "react-icons/fa";
 import { HiOutlineHashtag } from "react-icons/hi";
 import { IoIosNotifications } from "react-icons/io";
-import { BsThreeDots , BsPeople,BsFillPeopleFill,BsImage,BsEmojiSmile} from "react-icons/bs";
+import { BsThreeDots , BsPeople,BsFillPeopleFill,BsImage,BsEmojiSmile,BsShare} from "react-icons/bs";
 import { BiPoll } from "react-icons/bi";
 export const data = [
   {
@@ -63,5 +63,13 @@ export const icons = [
   <BiPoll/>,
   <BsEmojiSmile/>,
   <AiOutlineSchedule/>,
+  
+]
+
+export const postIcons = [
+<FaRegCommentAlt/>,
+<FaRetweet/>,
+<AiOutlineHeart/>,
+<BsShare/>,
 
 ]

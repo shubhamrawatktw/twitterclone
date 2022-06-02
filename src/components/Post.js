@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import img from "../assets/img.jpg";
 import { BsThreeDots } from "react-icons/bs";
+import { postIcons } from "../utils/data";
 export default function Post() {
   return (
     <Wrapper>
@@ -26,6 +27,11 @@ export default function Post() {
           deleniti incidunt ducimus quam quaerat amet, enim ipsa, eveniet
           perspiciatis veritatis delectus dolore totam?
         </p>
+        <div className="post-icons">
+          {postIcons.map((icon,index)=>{
+            return <span key={index} >{icon}</span>
+          })}
+        </div>
       </div>
     </Wrapper>
   );
@@ -69,8 +75,24 @@ const Wrapper = styled.section`
         }
         h6 {
           font-size: 0.8rem;
-          font-weight: 500;
+          font-weight: 400;
           padding: 0rem 1rem;
+        }
+      }
+    }
+    .post-icons{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg{
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 0.4rem 0.4rem;
+        border-radius: 30%;
+        &:hover{
+          /* border-radius: 50%; */
+          background-color: var(--clr-primary-10);
+          transition: var(--transition);
         }
       }
     }

@@ -2,6 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 export default function Header({ title, icons }) {
+
+  if (title === "explore") {
+    return (
+  <ExploreWrapper>
+    explore
+  </ExploreWrapper>
+    )
+  }
+  
+
   return (
     <Wrapper >
       <h4>{title}</h4>
@@ -41,3 +51,8 @@ const Wrapper = styled.section`
     display: flex;
   }
 `;
+
+const ExploreWrapper = styled.section`
+
+
+`

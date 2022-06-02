@@ -54,6 +54,8 @@ const Wrapper = styled.section`
       cursor: pointer;
       &:hover {
         background-color: var(--clr-primary-10);
+        transition: var(--transition);
+        
       }
     }
   }
@@ -85,6 +87,7 @@ const Wrapper = styled.section`
       }
       &:hover {
         background-color: var(--clr-primary-10);
+        transition: var(--transition);
       }
     }
   }
